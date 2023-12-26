@@ -3,14 +3,14 @@ const Expense = require('../models/expense');
 exports.insertExpense = (req, res, next) => {
     const desc = req.body.description;
     const categ = req.body.category;
-    const price = req.body.expAmount;
+    const amount = req.body.amount;
     console.log(desc);
     console.log(categ);
-    console.log(price);
+    console.log(amount);
     Expense.create({
       description: desc,
       category: categ,
-      price: price
+      amount: amount
     })
     .then(result=>{
       //console.log(result);
